@@ -13,6 +13,7 @@ export async function GET(request){
   }
 }
 
+//create user
 export async function POST(request){
  const {name,email,password,about} = await request.json();
  try {
