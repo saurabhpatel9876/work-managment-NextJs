@@ -31,6 +31,10 @@ export async function PUT(request,{params}){
         return NextResponse.json(updatedUser)
     } catch (error) {
         console.log("glt in PUT:---",error)
+        return NextResponse.json({
+            message: "failed to update user !!",
+            success: false,
+          });
     }
 }
 
@@ -50,5 +54,9 @@ export async function DELETE(request,{params}){
 
    } catch (error) {
     console.log("glt in delete",error)
+    return NextResponse.json({
+        message: "Error in deleting user !!",
+        success: false,
+      });
    }
 }

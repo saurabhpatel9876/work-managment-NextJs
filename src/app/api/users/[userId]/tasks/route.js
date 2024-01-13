@@ -3,6 +3,7 @@ import { Task } from "@/model/task"
 import { NextResponse } from "next/server"
 
 
+
 //for single users to show it's all task
 export async function GET(request,{params}){
     const {userId}=params
@@ -14,5 +15,6 @@ export async function GET(request,{params}){
         return responseMessage("ho gya GET user--task",200,true)
     } catch (error) {
         console.log("glt in GET [userId]-->tasks--route.js:--",error)
+        return getResponseMessage("Failed to get tasks", 404, false);
     }
 }

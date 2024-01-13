@@ -10,6 +10,11 @@ export async function GET(request){
     return NextResponse.json(user)
   } catch (error) {
     console.log("GET me prblm",error)
+    return NextResponse.json({
+      message: "failed to get users",
+      success: false,
+    });
+    
   }
 }
 
@@ -25,8 +30,19 @@ export async function POST(request){
     })
     await connectDB()
     const createdd= await createUser.save();
-    return NextResponse.json(createUser)
+    return NextResponse.json(createUser,{
+      status: 201,
+    })
  } catch (error) {
     console.log("POST me glt aa rha hain",error)
+
+    return NextResponse.json(
+      {
+        message: "failed to create user !!",
+        status: false,
+      },
+      {
+        status: 500,
+      })
  }
 }

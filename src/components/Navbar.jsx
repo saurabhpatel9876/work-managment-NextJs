@@ -31,17 +31,17 @@ const Navbar = () => {
           <Link className="text-white" href="/">
           Home
           </Link>
-          <Link className="text-white" href="/about">
+          <Link className="text-white" href="/addTask">
             Add Task
           </Link>
-          <Link className="text-white" href="/contact">
+          <Link className="text-white" href="/">
             Show Tasks
           </Link>
 
-          <Link className="block text-white mb-2" href="/about">
+          <Link className="block text-white mb-2" href="/signup">
               Sign Up
             </Link>
-            <Link className="block text-white" href="/contact">
+            <Link className="block text-white" href="/login">
             Log In
             </Link>
         </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
             <Link className="block text-white mb-2" href="/">Home
              
             </Link>
-            <Link className="block text-white mb-2" href="/about">
+            <Link className="block text-white mb-2" href="/addTask">
               Add Task
             </Link>
             <Link className="block text-white" href="/contact">
@@ -61,10 +61,10 @@ const Navbar = () => {
             <br></br>
             <br></br>
            <div className='flex gap-4'>
-           <Link className=" block text-white mb-2" href="/about">
+           <Link className=" block text-white mb-2" href="/signup">
               Sign Up
             </Link>
-            <Link className="block text-white" href="/contact">
+            <Link className="block text-white" href="/login">
             Log In
             </Link>
            </div>
