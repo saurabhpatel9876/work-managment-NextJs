@@ -6,3 +6,8 @@ export async function signUp(user){
     then((response)=>response.data)
     return result
 }
+
+export async function logIn(LoginData){
+    const result = await httpHelperAxios.post("/api/login",LoginData).then((response)=>response.data)
+    return result
+}

@@ -34,7 +34,7 @@ const Navbar = () => {
           <Link className="text-white" href="/addTask">
             Add Task
           </Link>
-          <Link className="text-white" href="/">
+          <Link className="text-white" href="/showTask">
             Show Tasks
           </Link>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
             <Link className="block text-white mb-2" href="/addTask">
               Add Task
             </Link>
-            <Link className="block text-white" href="/contact">
+            <Link className="block text-white" href="/showTask">
             Show Tasks
             </Link>
             <br></br>
