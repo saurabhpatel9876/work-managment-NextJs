@@ -7,6 +7,7 @@ console.log("middleware execute")
     const authToken = request.cookies.get("authToken")?.value; //here RHS authToken is from JWT
     if (
         request.nextUrl.pathname === "/api/login" || request.nextUrl.pathname === "/api/users"
+        // this two are public now
     ) {
         return;
     }

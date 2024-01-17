@@ -1,14 +1,35 @@
 "use client"
+import UserContext from '@/context/userContext';
+import { logout } from '@/services/userService';
 // components/Navbar.js
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+  const context = useContext(UserContext);
+  const router = useRouter()
+  console.log("contexttt:-:",context)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+
+  const handleLogOut =async()=>{
+
+    try {
+      const result = await logout()
+      context.setUser(undefined)
+      // router.push("/")
+      toast.success("logOut done")
+    } catch (error) {
+      console.log(error)
+      toast.error("error in logOut")
+    }
+  }
 
   return (
     <nav className="bg-blue-600 p-4">
@@ -38,12 +59,21 @@ const Navbar = () => {
             Show Tasks
           </Link>
 
-          <Link className="block text-white mb-2" href="/signup">
-              Sign Up
+          {context.user && (<>
+            <Link className="block text-white mb-2" href="/signup">
+              {context.user.name}
+            </Link>
+          <button className="block text-white mb-2" onClick={handleLogOut}>logOut</button>
+          </>)}
+
+          {!context.user && (<>
+            <Link className="block text-white mb-2" href="/signup">
+             SignUp
             </Link>
             <Link className="block text-white" href="/login">
-            Log In
+            LogIn
             </Link>
+          </>)}
         </div>
 
         {/* Responsive Navbar links */}
@@ -61,12 +91,21 @@ const Navbar = () => {
             <br></br>
             <br></br>
            <div className='flex gap-4'>
-           <Link className=" block text-white mb-2" href="/signup">
-              Sign Up
+           {context.user && (<>
+            <Link className="block text-white mb-2" href="/signup">
+              {context.user.name}
+            </Link>
+            <button className="block text-white mb-2" onClick={handleLogOut}>logOut</button>
+          </>)}
+
+          {!context.user && (<>
+            <Link className="block text-white mb-2" href="/signup">
+             SignUp
             </Link>
             <Link className="block text-white" href="/login">
-            Log In
+            LogIn
             </Link>
+          </>)}
            </div>
           </div>
         )}
