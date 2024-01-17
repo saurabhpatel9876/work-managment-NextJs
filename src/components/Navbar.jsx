@@ -23,7 +23,7 @@ const Navbar = () => {
     try {
       const result = await logout()
       context.setUser(undefined)
-      // router.push("/")
+      router.push("/")
       toast.success("logOut done")
     } catch (error) {
       console.log(error)
