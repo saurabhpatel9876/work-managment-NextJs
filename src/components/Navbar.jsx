@@ -18,10 +18,11 @@ const Navbar = () => {
   };
 
 
-  const handleLogOut =async()=>{
-
+  const handleLogOut =async(event)=>{
+    event.preventDefault()
     try {
       const result = await logout()
+      console.log("logout in navbar:-",result)
       context.setUser(undefined)
       router.push("/")
       toast.success("logOut done")
