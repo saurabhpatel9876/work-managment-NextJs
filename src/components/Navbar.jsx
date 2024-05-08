@@ -33,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-blue-600 p-4">
+    <nav className="bg-black p-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo or brand */}
         <Link className="text-white text-lg font-bold" href="/">Work Manager

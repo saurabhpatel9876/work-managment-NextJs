@@ -4,7 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ToastContainer } from "react-toastify";
-import UserProvider from '@/context/userProvider';
+// import UserProvider from '@/context/UserProvider';
+import UserProvider from '@/context/UserProvider';
 
 const inter = Inter({ subsets: ['latin'] })
 
